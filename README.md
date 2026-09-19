@@ -7,10 +7,11 @@
 [![Format](https://img.shields.io/badge/Format-Q4__K__M_GGUF-orange.svg)](#model-artifacts)
 [![Benchmark Score](https://img.shields.io/badge/Fable--Coder_Score-80.0%25_(92%2F115)-indigo.svg)](#overall-results)
 [![Benchmark Score](https://img.shields.io/badge/Qwen2.5--Coder_Score-76.5%25_(88%2F115)-emerald.svg)](#overall-results)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Download%20GGUF-ffd21e.svg)](https://huggingface.co/MalxTech/MalxLabs-Fable5_QwenCoder)
 
 **A controlled, reproducible comparative benchmark and post-training analysis between `fable-coder-7b-dpo` and `qwen2.5-coder-7b-instruct`.**
 
-[📖 Fable-Coder Architecture & Pipeline Report](FABLE_CODER_REPORT.md) • [📊 Exhaustive Raw Findings & Transcripts](FINDINGS.md) • [⚙️ Benchmark Spec](benchmark_spec.json) • [📁 Results Data](results/)
+[🤗 Download Model on Hugging Face](https://huggingface.co/MalxTech/MalxLabs-Fable5_QwenCoder) • [📖 Fable-Coder Architecture & Pipeline Report](FABLE_CODER_REPORT.md) • [📊 Exhaustive Raw Findings & Transcripts](FINDINGS.md) • [⚙️ Benchmark Spec](benchmark_spec.json) • [📁 Results Data](results/)
 
 ---
 
@@ -19,6 +20,29 @@
 ![Benchmark Comparison](benchmark_results.svg)
 
 </div>
+
+---
+
+## 📥 Model Binary & Downloads
+
+The compiled **4.36 GB Q4_K_M GGUF** model is hosted on Hugging Face:
+
+👉 **[Hugging Face Model Hub: MalxTech/MalxLabs-Fable5_QwenCoder](https://huggingface.co/MalxTech/MalxLabs-Fable5_QwenCoder)**
+
+### Quick Download via Hugging Face CLI
+```bash
+huggingface-cli download MalxTech/MalxLabs-Fable5_QwenCoder fable-coder-7b-dpo.Q4_K_M.gguf --local-dir .
+```
+
+### Direct Run with `llama.cpp`
+```bash
+llama-cli -m fable-coder-7b-dpo.Q4_K_M.gguf -p "Write a Python function to merge intervals without mutating the input." -n 512
+```
+
+### Run with Ollama
+```bash
+ollama run hf.co/MalxTech/MalxLabs-Fable5_QwenCoder
+```
 
 ---
 

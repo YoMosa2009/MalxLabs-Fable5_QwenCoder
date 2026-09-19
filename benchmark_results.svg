@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 760" width="100%" height="100%" style="background:#0b0f19; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+
+    <!-- Fable Bar Gradient -->
+    <linearGradient id="fableGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+
+    <!-- Qwen Bar Gradient -->
+    <linearGradient id="qwenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <!-- Card Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f293d" />
+      <stop offset="100%" stop-color="#151e2e" />
+    </linearGradient>
+
+    <!-- Glow / Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1060" height="760" fill="url(#bgGrad)" />
+
+  <!-- Header Section -->
+  <g transform="translate(45, 45)">
+    <rect x="0" y="0" width="70" height="24" rx="12" fill="#312e81" />
+    <text x="35" y="16" fill="#a5b4fc" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">BENCHMARK</text>
+    
+    <text x="82" y="17" fill="#94a3b8" font-size="12" font-weight="500">NVIDIA GeForce RTX 3060 12GB • Q4_K_M Quantization • Temperature 0 • Seed 424242</text>
+    
+    <text x="0" y="48" fill="#f8fafc" font-size="24" font-weight="800" letter-spacing="-0.5">Fable-Coder-7B-DPO vs. Qwen2.5-Coder-7B-Instruct</text>
+    <text x="0" y="70" fill="#94a3b8" font-size="13">Controlled 33-prompt comparative evaluation across 7 core capability categories (115 points max)</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(680, 50)">
+    <rect x="0" y="0" width="335" height="42" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    
+    <rect x="18" y="15" width="14" height="14" rx="3" fill="url(#fableGrad)" />
+    <text x="40" y="27" fill="#f8fafc" font-size="13" font-weight="600">Fable-Coder-7B-DPO</text>
+
+    <rect x="185" y="15" width="14" height="14" rx="3" fill="url(#qwenGrad)" />
+    <text x="207" y="27" fill="#f8fafc" font-size="13" font-weight="600">Qwen2.5-Coder-7B</text>
+  </g>
+
+  <!-- Main Chart Container -->
+  <g transform="translate(45, 145)">
+    <!-- Container Box -->
+    <rect width="665" height="570" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#shadow)" />
+    
+    <!-- Title -->
+    <text x="25" y="32" fill="#f1f5f9" font-size="16" font-weight="700">Category Accuracy &amp; Score Comparison</text>
+    <text x="25" y="50" fill="#64748b" font-size="12">Direct points earned out of total category points</text>
+
+    <!-- Grid lines (0%, 25%, 50%, 75%, 100%) -->
+    <!-- Chart base: x=190, width=410, ends at 600 -->
+    <!-- 0% at 190, 25% at 292.5, 50% at 395, 75% at 497.5, 100% at 600 -->
+    <g stroke="#334155" stroke-width="1" stroke-dasharray="3,3">
+      <line x1="190" y1="70" x2="190" y2="520" />
+      <line x1="292.5" y1="70" x2="292.5" y2="520" />
+      <line x1="395" y1="70" x2="395" y2="520" />
+      <line x1="497.5" y1="70" x2="497.5" y2="520" />
+      <line x1="600" y1="70" x2="600" y2="520" />
+    </g>
+
+    <!-- Grid Labels -->
+    <g fill="#64748b" font-size="10" font-weight="600" text-anchor="middle">
+      <text x="190" y="535">0%</text>
+      <text x="292.5" y="535">25%</text>
+      <text x="395" y="535">50%</text>
+      <text x="497.5" y="535">75%</text>
+      <text x="600" y="535">100%</text>
+    </g>
+
+    <!-- Bar Items -->
+    <!-- Total width for 100% is 410px. formula: px = pct * 410 / 100 -->
+
+    <!-- ROW 1: Context (100% vs 100%) - y=75 -->
+    <g transform="translate(0, 75)">
+      <text x="175" y="24" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="end">Context (6 pts)</text>
+      <!-- Fable bar (100% = 410px) -->
+      <rect x="190" y="8" width="410" height="14" rx="4" fill="url(#fableGrad)" />
+      <text x="608" y="20" fill="#a5b4fc" font-size="11" font-weight="700">100.0% (6/6)</text>
+      <!-- Qwen bar (100% = 410px) -->
+      <rect x="190" y="26" width="410" height="14" rx="4" fill="url(#qwenGrad)" />
+      <text x="608" y="38" fill="#6ee7b7" font-size="11" font-weight="700">100.0% (6/6)</text>
+    </g>
+
+    <!-- ROW 2: Knowledge (100% vs 100%) - y=130 -->
+    <g transform="translate(0, 130)">
+      <text x="175" y="24" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="end">Knowledge (8 pts)</text>
+      <!-- Fable bar (100% = 410px) -->
+      <rect x="190" y="8" width="410" height="14" rx="4" fill="url(#fableGrad)" />
+      <text x="608" y="20" fill="#a5b4fc" font-size="11" font-weight="700">100.0% (8/8)</text>
+      <!-- Qwen bar (100% = 410px) -->
+      <rect x="190" y="26" width="410" height="14" rx="4" fill="url(#qwenGrad)" />
+      <text x="608" y="38" fill="#6ee7b7" font-size="11" font-weight="700">100.0% (8/8)</text>
+    </g>
+
+    <!-- ROW 3: Reasoning (85.0% vs 65.0%) - y=185 *** HIGHLIGHT WINNER *** -->
+    <g transform="translate(0, 185)">
+      <rect x="10" y="2" width="645" height="46" rx="6" fill="#312e81" fill-opacity="0.25" stroke="#6366f1" stroke-width="1" stroke-dasharray="4,2" />
+      <text x="175" y="24" fill="#fbcfe8" font-size="13" font-weight="700" text-anchor="end">Reasoning (20 pts) ★</text>
+      <!-- Fable bar (85.0% = 348.5px) -->
+      <rect x="190" y="8" width="348.5" height="14" rx="4" fill="url(#fableGrad)" />
+      <text x="546" y="20" fill="#a5b4fc" font-size="11" font-weight="800">85.0% (17/20) +20%</text>
+      <!-- Qwen bar (65.0% = 266.5px) -->
+      <rect x="190" y="26" width="266.5" height="14" rx="4" fill="url(#qwenGrad)" />
+      <text x="464" y="38" fill="#6ee7b7" font-size="11" font-weight="700">65.0% (13/20)</text>
+    </g>
+
+    <!-- ROW 4: Agentic (84.0% vs 84.0%) - y=240 -->
+    <g transform="translate(0, 240)">
+      <text x="175" y="24" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="end">Agentic (25 pts)</text>
+      <!-- Fable bar (84.0% = 344.4px) -->
+      <rect x="190" y="8" width="344.4" height="14" rx="4" fill="url(#fableGrad)" />
+      <text x="542" y="20" fill="#a5b4fc" font-size="11" font-weight="700">84.0% (21/25)</text>
+      <!-- Qwen bar (84.0% = 344.4px) -->
+      <rect x="190" y="26" width="344.4" height="14" rx="4" fill="url(#qwenGrad)" />
+      <text x="542" y="38" fill="#6ee7b7" font-size="11" font-weight="700">84.0% (21/25)</text>
+    </g>
+
+    <!-- ROW 5: Security (81.8% vs 81.8%) - y=295 -->
+    <g transform="translate(0, 295)">
+      <text x="175" y="24" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="end">Security (11 pts)</text>
+      <!-- Fable bar (81.8% = 335.4px) -->
+      <rect x="190" y="8" width="335.4" height="14" rx="4" fill="url(#fableGrad)" />
+      <text x="533" y="20" fill="#a5b4fc" font-size="11" font-weight="700">81.8% (9/11)</text>
+      <!-- Qwen bar (81.8% = 335.4px) -->
+      <rect x="190" y="26" width="335.4" height="14" rx="4" fill="url(#qwenGrad)" />
+      <text x="533" y="38" fill="#6ee7b7" font-size="11" font-weight="700">81.8% (9/11)</text>
+    </g>
+
+    <!-- ROW 6: Coding (71.4% vs 71.4%) - y=350 -->
+    <g transform="translate(0, 350)">
+      <text x="175" y="24" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="end">Coding (35 pts)</text>
+      <!-- Fable bar (71.4% = 292.7px) -->
+      <rect x="190" y="8" width="292.7" height="14" rx="4" fill="url(#fableGrad)" />
+      <text x="490" y="20" fill="#a5b4fc" font-size="11" font-weight="700">71.4% (25/35)</text>
+      <!-- Qwen bar (71.4% = 292.7px) -->
+      <rect x="190" y="26" width="292.7" height="14" rx="4" fill="url(#qwenGrad)" />
+      <text x="490" y="38" fill="#6ee7b7" font-size="11" font-weight="700">71.4% (25/35)</text>
+    </g>
+
+    <!-- ROW 7: Instruction (60.0% vs 60.0%) - y=405 -->
+    <g transform="translate(0, 405)">
+      <text x="175" y="24" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="end">Instruction (10 pts)</text>
+      <!-- Fable bar (60.0% = 246px) -->
+      <rect x="190" y="8" width="246" height="14" rx="4" fill="url(#fableGrad)" />
+      <text x="444" y="20" fill="#a5b4fc" font-size="11" font-weight="700">60.0% (6/10)</text>
+      <!-- Qwen bar (60.0% = 246px) -->
+      <rect x="190" y="26" width="246" height="14" rx="4" fill="url(#qwenGrad)" />
+      <text x="444" y="38" fill="#6ee7b7" font-size="11" font-weight="700">60.0% (6/10)</text>
+    </g>
+
+    <!-- SEPARATOR LINE -->
+    <line x1="25" y1="460" x2="640" y2="460" stroke="#334155" stroke-width="1" />
+
+    <!-- ROW 8: Overall Score (80.0% vs 76.5%) - y=468 -->
+    <g transform="translate(0, 468)">
+      <text x="175" y="24" fill="#ffffff" font-size="14" font-weight="800" text-anchor="end">OVERALL (115 pts)</text>
+      <!-- Fable bar (80.0% = 328px) -->
+      <rect x="190" y="6" width="328" height="16" rx="4" fill="url(#fableGrad)" />
+      <text x="526" y="19" fill="#c7d2fe" font-size="12" font-weight="800">80.0% (92/115) 🏆</text>
+      <!-- Qwen bar (76.5% = 313.6px) -->
+      <rect x="190" y="26" width="313.6" height="16" rx="4" fill="url(#qwenGrad)" />
+      <text x="512" y="39" fill="#a7f3d0" font-size="12" font-weight="700">76.5% (88/115)</text>
+    </g>
+  </g>
+
+  <!-- Side Metric Cards -->
+  <g transform="translate(730, 145)">
+    <!-- Card 1: Score Delta -->
+    <rect width="285" height="165" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#shadow)" />
+    <text x="20" y="28" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">OVERALL ACCURACY LEAD</text>
+    <text x="20" y="62" fill="#818cf8" font-size="34" font-weight="900">+3.5%</text>
+    <text x="135" y="58" fill="#e2e8f0" font-size="14" font-weight="700">Fable-Coder</text>
+    <text x="135" y="74" fill="#64748b" font-size="11">92 vs 88 points</text>
+    <line x1="20" y1="88" x2="265" y2="88" stroke="#334155" stroke-width="1" />
+    <text x="20" y="110" fill="#cbd5e1" font-size="12" font-weight="600">The Decisive Differentiator: RE-02</text>
+    <text x="20" y="128" fill="#94a3b8" font-size="11">Fable calculated Bayes posterior correctly (8.76%).</text>
+    <text x="20" y="144" fill="#94a3b8" font-size="11">Qwen had decimal slip (82.6%), losing 4 points.</text>
+
+    <!-- Card 2: Inference Throughput -->
+    <g transform="translate(0, 185)">
+      <rect width="285" height="185" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#shadow)" />
+      <text x="20" y="28" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">GENERATION SPEED (TOK/S)</text>
+      <text x="20" y="62" fill="#34d399" font-size="34" font-weight="900">+18.2%</text>
+      <text x="145" y="58" fill="#e2e8f0" font-size="14" font-weight="700">Qwen Faster</text>
+      <text x="145" y="74" fill="#64748b" font-size="11">63.4 vs 53.7 tok/s</text>
+      <line x1="20" y1="88" x2="265" y2="88" stroke="#334155" stroke-width="1" />
+      
+      <!-- Speed comparison bars -->
+      <text x="20" y="110" fill="#94a3b8" font-size="11">Qwen2.5-Coder-7B:</text>
+      <rect x="135" y="99" width="130" height="12" rx="3" fill="url(#qwenGrad)" />
+      <text x="142" y="109" fill="#022c22" font-size="9" font-weight="800">63.43 tok/s</text>
+
+      <text x="20" y="132" fill="#94a3b8" font-size="11">Fable-Coder-7B:</text>
+      <rect x="135" y="121" width="110" height="12" rx="3" fill="url(#fableGrad)" />
+      <text x="142" y="131" fill="#1e1b4b" font-size="9" font-weight="800">53.65 tok/s</text>
+
+      <text x="20" y="162" fill="#64748b" font-size="11">Total Wall Time: Qwen 63.8s • Fable 82.0s</text>
+    </g>
+
+    <!-- Card 3: Model & Hardware Specs -->
+    <g transform="translate(0, 390)">
+      <rect width="285" height="180" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#shadow)" />
+      <text x="20" y="28" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">RUN ENVIRONMENT</text>
+      
+      <text x="20" y="54" fill="#e2e8f0" font-size="12" font-weight="600">Architecture &amp; Pipeline:</text>
+      <text x="20" y="70" fill="#94a3b8" font-size="11">DPO + SFT LoRA on Qwen2.5 Base</text>
+      
+      <text x="20" y="94" fill="#e2e8f0" font-size="12" font-weight="600">Quantized Binary:</text>
+      <text x="20" y="110" fill="#94a3b8" font-size="11">4.36 GB (Q4_K_M GGUF) (~70% reduction)</text>
+
+      <text x="20" y="134" fill="#e2e8f0" font-size="12" font-weight="600">Peak Inference VRAM:</text>
+      <text x="20" y="150" fill="#94a3b8" font-size="11">5,121 MB (Fable) / 5,152 MB (Qwen)</text>
+      <text x="20" y="166" fill="#64748b" font-size="10">8,192 token context on 12GB RTX 3060</text>
+    </g>
+  </g>
+</svg>
